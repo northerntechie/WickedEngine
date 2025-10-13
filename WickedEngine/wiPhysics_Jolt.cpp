@@ -182,6 +182,15 @@ namespace wi::physics
 			{
 				return inLayer == Layers::MOVING ? BroadPhaseLayers::DYNAMIC : BroadPhaseLayers::STATIC;
 			}
+#if defined(JPH_EXTERNAL_PROFILE) || defined(JPH_PROFILE_ENABLED)
+			// TODO(Juno): Implementation missing
+			/// Get the user readable name of a broadphase layer (debugging
+			/// purposes)
+			virtual const char* GetBroadPhaseLayerName(BroadPhaseLayer inLayer) const override
+			{
+				return "";
+			}
+#endif // JPH_EXTERNAL_PROFILE || JPH_PROFILE_ENABLED
 		};
 
 		/// Class that determines if an object layer can collide with a broadphase layer
