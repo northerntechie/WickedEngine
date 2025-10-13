@@ -10,6 +10,7 @@ list(APPEND SOURCE_FILES main_${PLATFORM}.cpp)
 
 
 if (WIN32)
+	message(STATUS "Building a Win32 platform...")
     list (APPEND SOURCE_FILES
         Editor.rc
     )

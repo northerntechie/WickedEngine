@@ -20,8 +20,8 @@ option(WICKED_DYNAMIC_LIBRARY "Build WickedEngine as a dynamic library" OFF)
 option(WICKED_PIC "Build WickedEngine as position-independent code" WICKED_DYNAMIC_LIBRARY)
 option(USE_LIBCXX "Link WickedEngine to llvm libc++ library - only available with the Clang compiler" OFF)
 option(WICKED_EDITOR "Build WickedEngine editor" ON)
-option(WICKED_TESTS "Build WickedEngine tests" ON)
-option(WICKED_IMGUI_EXAMPLE "Build WickedEngine imgui example" ON)
+option(WICKED_TESTS "Build WickedEngine tests" OFF)
+option(WICKED_IMGUI_EXAMPLE "Build WickedEngine imgui example" OFF)
 option(WICKED_USE_IPO "Enable IPO/LTO in non-debug builds" ${ipo_supported})
 
 if (CMAKE_HOST_WIN32)
@@ -58,9 +58,9 @@ else()
 endif()
 
 if(UNIX)
-    option(WICKED_LINUX_TEMPLATE "Build WickedEngine Linux template" ON)
+    option(WICKED_LINUX_TEMPLATE "Build WickedEngine Linux template" OFF)
 elseif(WIN32)
-    option(WICKED_WINDOWS_TEMPLATE "Build WickedEngine Windows template" ON)
+    option(WICKED_WINDOWS_TEMPLATE "Build WickedEngine Windows template" OFF)
 endif()
 
 # Configure CMake global variables
